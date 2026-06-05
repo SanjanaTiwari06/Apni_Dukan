@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://apni-dukan-uak1.vercel.app/"  // Fixed: removed trailing slash
+    "https://apni-dukan-uak1.vercel.app"  // Fixed: removed trailing slash
   ]
 }));
 
