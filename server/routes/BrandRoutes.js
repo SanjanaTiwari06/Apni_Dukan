@@ -3,7 +3,7 @@ const { brandUploader } = require("../middlewares/fileUploader")
 const {
     authSuperAdmin,
     authAdmin,
-    authPublic
+    
 } = require("../middlewares/authentication")
 
 const {
@@ -15,8 +15,8 @@ const {
 } = require("../controllers/BrandController")
 
 BrandRouter.post("", authAdmin, brandUploader.single("pic"), createRecord)
-BrandRouter.get("", authPublic, getRecord)
-BrandRouter.get("/:_id", authPublic, getSingleRecord)
+BrandRouter.get("",  getRecord)
+BrandRouter.get("/:_id",  getSingleRecord)
 BrandRouter.put("/:_id", authAdmin, brandUploader.single("pic"), updateRecord)
 BrandRouter.delete("/:_id", authSuperAdmin, deleteRecord)
 
