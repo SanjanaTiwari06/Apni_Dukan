@@ -1,7 +1,7 @@
 const ProductRouter = require("express").Router()
 const { productUploader } = require("../middlewares/fileUploader")
 const {
-    authPublic,
+    
     authAdmin,
     authSuperAdmin,
     authBuyer
@@ -15,8 +15,8 @@ const {
 } = require("../controllers/ProductController")
 
 ProductRouter.post("", authAdmin, productUploader.array("pic"), createRecord)
-ProductRouter.get("", authPublic, getRecord)
-ProductRouter.get("/:_id", authPublic, getSingleRecord)
+ProductRouter.get("",  getRecord)
+ProductRouter.get("/:_id",  getSingleRecord)
 ProductRouter.put("/:_id", authBuyer, productUploader.array("pic"), updateRecord)
 ProductRouter.delete("/:_id", authSuperAdmin, deleteRecord)
 
